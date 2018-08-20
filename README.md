@@ -1,5 +1,5 @@
 # RCH_Hackathon
-[Raiffeisen RAIlab](https://www.raiffeisen.ch/winkeln/de/ueber-uns/organisation/rai-lab.html) participates the [HackZurich 2018]() as Gold Sponsor. Here on GitHub hacking teams will find all information they need to join the competition to our challenge.
+[Raiffeisen RAIlab](https://www.raiffeisen.ch/winkeln/de/ueber-uns/organisation/rai-lab.html) participates the HackZurich 2018 as Gold Sponsor. Here on GitHub hacking teams will find all information they need to join the competition to our challenge.
 
 ![RAI Lab](https://www.raiffeisen.ch/content/dam/www/rch/ueber-uns/organisation/bannerbilder/Logo-RAI-Lab.jpg.transform/w1920/image.jpg)
 
