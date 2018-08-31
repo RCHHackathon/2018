@@ -1,0 +1,14 @@
+/* Custom page CSS
+-------------------------------------------------- */
+* {
+   -webkit-user-select: none;
+   box-sizing: border-box;
+   font-family: 'Open Sans';
+}
+
+#touch_me{
+    text-align: center;
+    height: 580px;
+    line-height: 580px;
+    font-size: 70px;
+}

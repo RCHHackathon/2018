@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="template-app" version="0.0.0">
+ <names>
+  <name lang="en_US">Template</name>
+ </names>
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="start_template">
+   <nature>interactive</nature>
+   <triggerSentences>
+    <sentence lang="en_US">start the example app</sentence>
+   </triggerSentences>
+   <loadingResponses>
+    <sentence lang="en_US">Ok, I will show you my example app</sentence>
+   </loadingResponses>
+   <autonomous>
+    <condition purpose="launchTrigger"><![CDATA[bang('FrontTactilTouched') && bang('MiddleTactilTouched') && bang('RearTactilTouched')]]></condition>
+   </autonomous>
+   <permissions>
+    <canRunOnPod/>
+   </permissions>
+  </behaviorContent>
+  <behaviorContent path="animations/little_laugh">
+   <nature>interactive</nature>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+ <services>
+  <service name="TemplateService" autorun="false" execStart="/usr/bin/python2 lib/template.py"/>
+ </services>
+</package>

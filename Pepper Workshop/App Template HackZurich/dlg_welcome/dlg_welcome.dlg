@@ -1,0 +1,4 @@
+multilanguage:dlg_welcome
+  ged:dlg_welcome_ged.top
+  enu:dlg_welcome_enu.top
+  frf:dlg_welcome_frf.top

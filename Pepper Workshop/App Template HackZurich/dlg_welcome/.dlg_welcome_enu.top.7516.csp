@@ -1,0 +1,40 @@
+topic: ~dlg_welcome()
+language: enu
+
+#Include Dialog Lexicon with predefined concepts
+include: lexicon_enu.top
+
+#                    
+#CONCEPTS            
+#                    
+concept:(hello) " ^start(animations/Stand/Gestures/Hey_3) Hello buddy ^wait(animations/Stand/Gestures/Hey_3) "
+concept:(touch_tablet) " ^start(animations/Stand/Gestures/ShowTablet_1) Please touch my tablet! ^wait(animations/Stand/Gestures/ShowTablet_1)"
+concept:(touch_head) " ^runSound(Aldebaran/enu_ono_cough_embarrased_03) ^rand["not my head, my tablet" "you touched my head, not my tablet" "buddy, that was my head!"] "
+concept:(touch_hand) " ^runSound(Aldebaran/enu_ono_ba_human_touch_hand_02) ^rand["not my hand, my tablet" "you touched my hand, not my tablet" "buddy, that was my hand!"] "
+concept:(touch_answer) ^rand["I'm ticklish" "that tickles" "I'm so ticklish" "oh, you tickle me"]
+concept:(touch_react) " ~joyful ^start(template-app/animations/little_laugh) ~touch_answer ^wait(template-app/animations/little_laugh)"
+concept:(byebye) "["bye, bye" "see you"]"
+concept:(pepper) [Pepper Peppa Robot]
+concept:(buddy) ^rand["buddy" "my friend"]
+
+#                    
+#USER INPUTS         
+#                    
+
+#onStart event triggered when dialog box is started
+u:(e:onStart) ~hello ^gotoReactivate(TABLET_TOUCH)
+
+#template/tabletTouch raised by python service
+u:(e:template/tabletTouch) ~touch_react
+
+#touch events predefined ALMemmory events in NAOqi
+u:([e:FrontTactilTouched e:MiddleTactilTouched e:RearTactilTouched])  ~touch_head
+u:([e:HandLeftBackTouched e:HandRightBackTouched]) ~touch_hand
+
+#speech input
+u:(_~byebye ~pepper) $1 ~buddy $onStopped=1
+
+#                    
+#PROPOSALS           
+#                    
+proposal: %TABLET_TOUCH ~touch_tablet
